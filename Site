@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Marca - Studio Priscila Sabadin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px 20px;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #A991C7 0%, #8B7BA8 100%);
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .header h2 {
+            font-size: 24px;
+            font-weight: 400;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #A991C7;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #718096;
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+
+        .section-text {
+            font-size: 17px;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f7f3fa 0%, #f0ebf5 100%);
+            padding: 32px;
+            border-radius: 16px;
+            margin: 32px 0;
+            border-left: 4px solid #A991C7;
+        }
+
+        .highlight-box strong {
+            color: #A991C7;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin: 32px 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            border: 2px solid #e8e4ed;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(169, 145, 199, 0.15);
+            border-color: #A991C7;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 12px;
+        }
+
+        .card-text {
+            font-size: 16px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f7f3fa 100%);
+            padding: 32px;
+            border-radius: 16px;
+            border: 2px solid #A991C7;
+            margin-bottom: 24px;
+        }
+
+        .value-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #A991C7;
+            margin-bottom: 16px;
+        }
+
+        .value-text {
+            font-size: 16px;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .personality-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .personality-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            border: 2px solid #e8e4ed;
+            text-align: center;
+        }
+
+        .personality-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #A991C7;
+            margin-bottom: 16px;
+        }
+
+        .personality-text {
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .tag {
+            background: #A991C7;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .tag.negative {
+            background: #e2e8f0;
+            color: #718096;
+        }
+
+        .segment-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+            padding: 28px;
+            border-radius: 16px;
+            border-left: 4px solid #A991C7;
+            margin-bottom: 20px;
+        }
+
+        .segment-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 12px;
+        }
+
+        .segment-text {
+            font-size: 16px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            padding: 48px;
+            border-radius: 16px;
+            margin: 48px 0;
+            color: white;
+            text-align: center;
+            font-style: italic;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .quote-author {
+            margin-top: 24px;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 16px;
+            color: #A991C7;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #A991C7 50%, transparent 100%);
+            margin: 60px 0;
+        }
+
+        .differentials-list {
+            margin: 32px 0;
+        }
+
+        .differential-item {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #A991C7;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .differential-number {
+            display: inline-block;
+            background: #A991C7;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+
+        .differential-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        .differential-text {
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .promise-card {
+            background: linear-gradient(135deg, #f7f3fa 0%, #ffffff 100%);
+            padding: 28px;
+            border-radius: 16px;
+            border: 2px solid #e8e4ed;
+        }
+
+        .promise-label {
+            font-size: 14px;
+            font-weight: 700;
+            color: #A991C7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .promise-text {
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .personality-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .header h2 {
+                font-size: 20px;
+            }
+
+            .content {
+                padding: 40px 24px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .grid-2,
+            .grid-3,
+            .personality-grid,
+            .promise-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Plataforma de Marca</h1>
+            <h2>Studio Priscila Sabadin</h2>
+        </div>
+
+        <div class="content">
+            <!-- POSICIONAMENTO -->
+            <div class="section">
+                <h3 class="section-title">Posicionamento</h3>
+                <h4 class="section-subtitle">O único studio da Região Metropolitana de Curitiba onde transformação capilar premium encontra acolhimento terapêutico</h4>
+                
+                <p class="section-text">
+                    Para mulheres de 25 a 60 anos das classes B e C que valorizam qualidade e conexão genuína, o Studio Priscila Sabadin é o primeiro espaço de transformação capilar premium com experiência terapêutica integrada que combina expertise técnica de três gerações com atendimento noturno exclusivo.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>Território de marca: Premium local (média-alta)</strong>
+                    <p>Acima dos salões commodity que competem por preço, mas significativamente abaixo das referências de Curitiba, mantendo acessibilidade para classes B e C enquanto justifica plenamente cada real investido através de qualidade técnica, produtos profissionais, tempo generoso e experiência integral de cuidado.</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- PROPÓSITO -->
+            <div class="section">
+                <h3 class="section-title">Propósito</h3>
+                <h4 class="section-subtitle">Por que existimos</h4>
+                
+                <p class="section-text">
+                    Acreditamos que toda mulher merece um espaço onde possa ser ela mesma, sem julgamentos, e onde a transformação exterior seja apenas o reflexo visível de um cuidado que nutre por dentro.
+                </p>
+
+                <p class="section-text">
+                    Existimos porque em algum ponto, entre a correria de rotinas impossíveis e a pressão de padrões inalcançáveis, mulheres esqueceram que merecem ser cuidadas. Não apenas "arrumadas" rapidamente entre compromissos, mas verdadeiramente cuidadas – com tempo, atenção, escuta e respeito.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>Nossa missão</strong>
+                    <p>Oferecer transformação que vai além da aparência física, criando um espaço de acolhimento genuíno onde mulheres possam se reconectar consigo mesmas, sentir-se confiantes e valorizadas.</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- DIFERENCIAIS -->
+            <div class="section">
+                <h3 class="section-title">Diferenciais Inimitáveis</h3>
+                <h4 class="section-subtitle">O que nos torna únicos</h4>
+
+                <div class="differentials-list">
+                    <div class="differential-item">
+                        <span class="differential-number">1</span>
+                        <div class="differential-title">Tradição familiar de três gerações</div>
+                        <div class="differential-text">Expertise transmitida de avó para mãe e para filha ao longo de décadas. Não é apenas técnica aprendida em curso – é vocação herdada de cuidar da beleza e autoestima de outras mulheres.</div>
+                    </div>
+
+                    <div class="differential-item">
+                        <span class="differential-number">2</span>
+                        <div class="differential-title">Atendimento noturno exclusivo até 21h</div>
+                        <div class="differential-text">Único studio da região com disponibilidade após 19h durante a semana, atendendo profissionais que trabalham em horário comercial sem precisar escolher entre carreira e autocuidado.</div>
+                    </div>
+
+                    <div class="differential-item">
+                        <span class="differential-number">3</span>
+                        <div class="differential-title">Experiência terapêutica integrada</div>
+                        <div class="differential-text">Cada atendimento concebido como momento holístico de cuidado emocional + estético. Não é apenas transação comercial, é renovação completa.</div>
+                    </div>
+
+                    <div class="differential-item">
+                        <span class="differential-number">4</span>
+                        <div class="differential-title">Especialização em transformações complexas</div>
+                        <div class="differential-text">Foco consciente em procedimentos que exigem 3-5+ horas (mechas, colorações multidimensionais, tratamentos profundos). Abraçamos a complexidade que salões de volume rejeitam.</div>
+                    </div>
+
+                    <div class="differential-item">
+                        <span class="differential-number">5</span>
+                        <div class="differential-title">Qualidade de Curitiba com conveniência local</div>
+                        <div class="differential-text">Produtos profissionais (Pratik Pró, Borabella) e expertise técnica equivalente aos melhores salões da capital, mas com preços 20-30% menores e sem necessidade de deslocamento.</div>
+                    </div>
+
+                    <div class="differential-item">
+                        <span class="differential-number">6</span>
+                        <div class="differential-title">Consultoria honesta radical</div>
+                        <div class="differential-text">Disposição de recusar serviços lucrativos quando danificariam cabelo da cliente, priorizando saúde capilar sobre receita imediata.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- VALORES -->
+            <div class="section">
+                <h3 class="section-title">Valores Fundamentais</h3>
+                <h4 class="section-subtitle">O que guia cada decisão</h4>
+
+                <div class="value-card">
+                    <div class="value-title">Acolhimento genuíno</div>
+                    <div class="value-text">Criação intencional de espaço psicologicamente seguro onde cada mulher pode ser autêntica, sem máscaras sociais ou medo de julgamento. Tempo generoso que permite conversas genuínas, profissional que lembra detalhes pessoais demonstrando que cada cliente importa como indivíduo.</div>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-title">Transformação com propósito</div>
+                    <div class="value-text">Compromisso com resultados que genuinamente elevam autoestima, não apenas mudanças superficiais temporárias. Foco em saúde capilar que permite transformações sustentáveis através de produtos profissionais com durabilidade superior.</div>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-title">Tradição com inovação</div>
+                    <div class="value-text">Honrar expertise transmitida através de três gerações enquanto abraçamos técnicas modernas e tendências contemporâneas. Valorização do trabalho manual artesanal combinado com conhecimento técnico atualizado.</div>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-title">Confiança através da transparência</div>
+                    <div class="value-text">Construir relacionamentos de longo prazo baseados em honestidade radical sobre produtos, processos e limitações realistas. Consultoria que pode incluir recusar serviço lucrativo quando prejudicaria o cabelo.</div>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-title">Alegria e leveza</div>
+                    <div class="value-text">Cultivar energia positiva que permite espontaneidade, risadas genuínas e celebração do prazer legítimo de cuidar de si mesma. Ambiente vibrante sem sobriedade excessiva, onde mulheres podem simplesmente relaxar.</div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- PERSONALIDADE -->
+            <div class="section">
+                <h3 class="section-title">Personalidade</h3>
+                <h4 class="section-subtitle">Como a marca se comporta e fala</h4>
+
+                <div class="highlight-box">
+                    <strong>Nossa voz</strong>
+                    <p>A voz do Studio Priscila Sabadin é como uma amiga mais velha sábia e acolhedora: competente o suficiente para você confiar completamente, mas calorosa demais para você se sentir intimidada. Ela te diz a verdade mesmo quando dói, mas sempre com carinho. Te faz rir quando precisa, te ouve quando chora, e celebra genuinamente suas vitórias.</p>
+                </div>
+
+                <h4 style="font-size: 22px; color: #2d3748; margin: 40px 0 24px 0; font-weight: 700;">Três pilares da personalidade</h4>
+
+                <div class="personality-grid">
+                    <div class="personality-card">
+                        <div class="personality-title">Profissional sem ser fria</div>
+                        <div class="personality-text">Demonstra expertise técnica e organização impecável, mas nunca cria distanciamento. Explica processos complexos em linguagem acessível. É pontual e confiável, mas nunca rígida.</div>
+                    </div>
+
+                    <div class="personality-card">
+                        <div class="personality-title">Amigável sem ser invasiva</div>
+                        <div class="personality-text">Próxima e calorosa, mas respeita limites. Chama pelo nome, não por apelidos genéricos. Lê sinais: conversa quando cliente quer, respeita silêncio quando necessário.</div>
+                    </div>
+
+                    <div class="personality-card">
+                        <div class="personality-title">Acolhedora sem ser condescendente</div>
+                        <div class="personality-text">Cria espaço seguro para vulnerabilidades, mas nunca trata clientes como se fossem frágeis. Valida sentimentos sem dramatizar. Empodera enquanto acolhe.</div>
+                    </div>
+                </div>
+
+                <h4 style="font-size: 22px; color: #2d3748; margin: 40px 0 24px 0; font-weight: 700;">Atributos-chave</h4>
+
+                <div class="tags">
+                    <span class="tag">Empática</span>
+                    <span class="tag">Honesta</span>
+                    <span class="tag">Confiante</span>
+                    <span class="tag">Calorosa</span>
+                    <span class="tag">Educativa</span>
+                    <span class="tag">Celebrativa</span>
+                </div>
+
+                <div class="tags">
+                    <span class="tag negative">❌ Formal/Corporativa</span>
+                    <span class="tag negative">❌ Superficial</span>
+                    <span class="tag negative">❌ Manipulativa</span>
+                    <span class="tag negative">❌ Julgadora</span>
+                    <span class="tag negative">❌ Pedante</span>
+                    <span class="tag negative">❌ Desesperada</span>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 32px;">
+                    <strong>Arquétipo primário: O Prestativo</strong>
+                    <p>Movido pela compaixão e desejo genuíno de cuidar dos outros. Sua missão é proteger, nutrir e ajudar pessoas a se sentirem seguras e amadas. Encontra realização em fazer diferença na vida de outros através do cuidado atencioso.</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- PÚBLICO -->
+            <div class="section">
+                <h3 class="section-title">Público</h3>
+                <h4 class="section-subtitle">Quem transformamos</h4>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">Perfil demográfico geral</div>
+                        <div class="card-text">
+                            <strong style="color: #A991C7;">Gênero:</strong> 100% feminino<br><br>
+                            <strong style="color: #A991C7;">Faixa etária:</strong> 15 a 60 anos<br><br>
+                            <strong style="color: #A991C7;">Classe:</strong> B e C (R$2.200-9.600/mês)<br><br>
+                            <strong style="color: #A991C7;">Localização:</strong> Campina Grande do Sul, Quatro Barras (raio 10km)<br><br>
+                            <strong style="color: #A991C7;">Ocupação:</strong> Profissionais, estudantes, donas de casa, autônomas
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">O que acreditam</div>
+                        <div class="card-text">
+                            • Autocuidado é necessidade legítima<br><br>
+                            • Beleza exterior impacta autoestima<br><br>
+                            • Qualidade vale o investimento<br><br>
+                            • Confiança vale mais que preço baixo<br><br>
+                            • Tempo é recurso escasso e precioso<br><br>
+                            • Merecem respeito e atenção
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="font-size: 22px; color: #2d3748; margin: 48px 0 24px 0; font-weight: 700;">Três segmentos principais</h4>
+
+                <div class="segment-card">
+                    <div class="segment-title">Jovens e adultas jovens (15-30 anos) – 30%</div>
+                    <div class="segment-text">Experimentação e ousadia estética, sensibilidade ao preço mas disposta a investir em qualidade, alta atividade em redes sociais, busca experiências compartilháveis.</div>
+                </div>
+
+                <div class="segment-card">
+                    <div class="segment-title">Adultas em idade produtiva (30-45 anos) – 45% CORE</div>
+                    <div class="segment-text">Rotina intensa que deixa pouco tempo livre, valoriza extremamente atendimento noturno, menos sensível ao preço quando percebe valor, busca momento terapêutico de autocuidado.</div>
+                </div>
+
+                <div class="segment-card">
+                    <div class="segment-title">Mulheres maduras (45-60 anos) – 25%</div>
+                    <div class="segment-text">Busca manutenção e cobertura de cabelos brancos, valoriza relacionamento duradouro com profissional fixo, lealdade extrema quando encontra lugar de confiança.</div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- PROMESSA -->
+            <div class="section">
+                <h3 class="section-title">Promessa Central</h3>
+                <h4 class="section-subtitle">O que entregamos</h4>
+
+                <p class="section-text">
+                    Aqui você não é apenas mais uma cliente na agenda. É uma mulher com história, sonhos e beleza única que merece ser vista, ouvida e cuidada em sua totalidade. Seu cabelo será transformado com técnica impecável e produtos profissionais, mas sua alma também respirará. Porque acreditamos que transformação verdadeira acontece quando o exterior reflete o cuidado interior.
+                </p>
+
+                <div class="promise-grid">
+                    <div class="promise-card">
+                        <div class="promise-label">Técnica</div>
+                        <div class="promise-text">Uso exclusivo de produtos profissionais, tempo adequado sem apressamentos, consultoria honesta que prioriza saúde dos fios, expertise certificada em colorimetria e tratamentos complexos.</div>
+                    </div>
+
+                    <div class="promise-card">
+                        <div class="promise-label">Emocional</div>
+                        <div class="promise-text">Espaço psicologicamente seguro onde você pode ser autêntica, escuta atenta sem julgamentos, tempo seu dedicado exclusivamente a você, celebração genuína de cada transformação.</div>
+                    </div>
+
+                    <div class="promise-card">
+                        <div class="promise-label">Prática</div>
+                        <div class="promise-text">Atendimento noturno até 21h (único da região), flexibilidade que respeita sua rotina, preços justos que cabem no orçamento das classes B e C, conveniência local sem viajar até Curitiba.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUOTE FINAL -->
+            <div class="quote">
+                "Nosso maior orgulho não são as mechas impecáveis ou as progressivas duradouras. É a mulher que chora de emoção ao se ver no espelho. É a mãe que finalmente tirou tempo para si. É a profissional que descobriu que autocuidado não é egoísmo. É cada mulher que saiu daqui não apenas mais bonita, mas mais inteira."
+                <div class="quote-author">— Studio Priscila Sabadin</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
